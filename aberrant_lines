@@ -1,4 +1,6 @@
 #This piece of statement (or code if you want to call it like that), prints the number of aberrant lines that do not match the sequence
 #vs the quality printed by the .fastq file
 
+`
 cat fastq | paste - - - - | awk -F"\t" '{ if (length($2) != length($4)) print $0 }' | wc -l
+`
